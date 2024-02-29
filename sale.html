@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .sale-page {
+        background-image: url(images/img3.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 1100px;
+        margin: 0;
+    }
+
+    h1 {
+        color: aliceblue;
+    }
+
+  section {
+        justify-content: center;
+        text-align: center;
+    }
+
+section>div {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        color: rgb(231, 14, 14);
+        padding-top: 2%;
+    }
+</style>
+
+
+<body>
+    <div class="sale-page">
+
+        <div id="menu">
+            <div id="menu-bar" onclick="menuOnClick()">
+              <div id="bar1" class="bar"></div>
+              <div id="bar2" class="bar"></div>
+              <div id="bar3" class="bar"></div>
+            </div>
+            <nav class="nav" id="nav">
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href='users.html'>Услуги</a></li>
+                <li><a href='list.html'>Список</a></li>
+        
+              </ul>
+            </nav>
+          </div>
+
+        <div class="img"></div>
+
+        <section class="dateContainer">
+            
+            <h1 class="mainText">До 8 Марта осталось:</h1>
+            <div class="main">
+
+                <div class="day">
+                    <p id="days">00</p>
+                    <span>День</span>
+                </div>
+                <div class="hour">
+                    <p id="hours">00</p>
+                    <span>Часы</span>
+                </div>
+                <div class="min">
+                    <p id="mins">00</p>
+                    <span>Минуты</span>
+                </div>
+                <div class="second">
+                    <p id="seconds">00</p>
+                    <span>Секунды</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function menuOnClick() {
+          document.getElementById("menu-bar").classList.toggle("change");
+          document.getElementById("nav").classList.toggle("change");
+          document.getElementById("menu-bg").classList.toggle("change-bg");
+        }
+    
+      </script>
+
+
+    <script>
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minsEl = document.getElementById('mins');
+        const secondsEl = document.getElementById('seconds');
+        const newYears = "8 march 2024";
+        var timer;
+        function countdown() {
+            const newYearsDate = new Date(newYears);
+            const currentDate = new Date();
+            const totalseconds = (newYearsDate - currentDate) / 1000;
+            const days = Math.floor(totalseconds / 3600 / 24);
+            const hours = Math.floor(totalseconds / 3600) % 24;
+            const mins = Math.floor(totalseconds / 60) % 60;
+            const seconds = Math.floor(totalseconds) % 60;
+            daysEl.innerHTML = days;
+            hoursEl.innerHTML = hours;
+            minsEl.innerHTML = mins;
+            secondsEl.innerHTML = seconds;
+            if (days <= 0 && hours <= 0 && mins <= 0 && seconds <= 0) {
+                window.clearInterval(timer);
+            }
+        }
+        timer = setInterval(countdown, 1000);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

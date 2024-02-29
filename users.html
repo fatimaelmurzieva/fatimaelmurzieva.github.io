@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="menu">
+            <div id="menu-bar" onclick="menuOnClick()">
+              <div id="bar1" class="bar"></div>
+              <div id="bar2" class="bar"></div>
+              <div id="bar3" class="bar"></div>
+            </div>
+            <nav class="nav" id="nav">
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href='users.html'>Услуги</a></li>
+                <li><a href='list.html'>Список</a></li>
+        
+              </ul>
+            </nav>
+          </div>
+          <div class="menu-bg" id="menu-bg"></div>
+    </header>
+
+    <main>
+        <div id="all-users"></div>
+      
+        <div id="result"></div>
+
+        <div id="posts"></div>
+      
+    </main>
+    <script>
+        function menuOnClick() {
+          document.getElementById("menu-bar").classList.toggle("change");
+          document.getElementById("nav").classList.toggle("change");
+          document.getElementById("menu-bg").classList.toggle("change-bg");
+        }
+    
+      </script>
+    <script src="js/script1.js"></script>
+</body>
+
+</html>

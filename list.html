@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список желаний</title>
+    <style>
+        body {
+            background-image: url(images/img.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .logo {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        #app {
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+
+
+        }
+
+        input[type='text'] {
+
+            width: 70%;
+
+            padding: 10px;
+
+        }
+
+        button {
+
+            padding: 10px 20px;
+
+            background-color: #007BFF;
+
+            color: #fff;
+
+            border: none;
+
+            cursor: pointer;
+
+        }
+
+        ul {
+
+            list-style-type: none;
+
+            padding: 0;
+
+        }
+
+        li {
+
+            border: 1px solid #cccccc;
+
+            padding: 10px;
+
+            margin: 5px 0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+            background-color: #cccccc;
+
+
+        }
+
+        h1 {
+            color: aquamarine;
+
+        }
+
+        .btn {
+            display: flex;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html" class="logo">Салон цветов</a>
+
+
+    <h1 style="text-align: center">Список желаний</h1>
+
+    <div class="img"></div>
+
+    <div id='app'>
+        <input type='text' id='taskInput' placeholder='Добавить желание'>
+        <div class="btn">
+            <button id='addTask'>Добавить</button>
+        </div>
+        <ul id='taskList'>
+        </ul>
+    </div>
+
+    <script>
+        const taskInput = document.getElementById('taskInput');
+
+        const addTaskButton = document.getElementById('addTask');
+
+        const taskList = document.getElementById('taskList');
+
+        addTaskButton.addEventListener('click', () => {
+
+            const taskText = taskInput.value;
+
+            if (taskText) {
+
+                const taskItem = document.createElement('li');
+
+                taskItem.innerHTML = `
+
+<span>${taskText}</span>
+
+<button class="deleteTask">Удалить</button>`;
+
+                taskList.append(taskItem);
+
+                taskInput.value = "";
+
+                const deleteButton = taskItem.querySelector('.deleteTask');
+
+                deleteButton.addEventListener('click', () => {
+
+                    taskItem.remove(taskList);
+
+                });
+
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

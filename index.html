@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liliay</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Салон цветов</h1>
+    <img class="auto" src="images/img6.jpg" alt="">
+    <div>
+      <p>L</p><br>
+      <p>I</p><br>
+      <p>L</p><br>
+      <p>I</p><br>
+      <p>A</p><br>
+      <p>Y</p><br>
+    </div>
+
+  </div>
+
+  <div id="menu">
+    <div id="menu-bar" onclick="menuOnClick()">
+      <div id="bar1" class="bar"></div>
+      <div id="bar2" class="bar"></div>
+      <div id="bar3" class="bar"></div>
+    </div>
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+        <li><a href='users.html'>Услуги</a></li>
+        <li><a href='list.html'>Список</a></li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <div class="menu-bg" id="menu-bg"></div>
+
+  <ul class="social-icons-5">
+    <li><a href="#"><i class="fa fa-vk"></i><img src="images/vk.png" alt=""></a></li>
+    <li><a href="#"><i class="fa fa-odnoklassniki"></i><img src="images/ok.png" alt=""></a></li>
+    <li><a href="#"><i class="fa fa-telegram"></i><img src="images/telegram.png" alt=""></a></li>
+
+    <li><a href="sale.html"><img src="images/1.png" alt="" /></a></li>
+  </ul>
+
+
+
+  <script>
+    function menuOnClick() {
+      document.getElementById("menu-bar").classList.toggle("change");
+      document.getElementById("nav").classList.toggle("change");
+      document.getElementById("menu-bg").classList.toggle("change-bg");
+    }
+
+  </script>
+
+</body>
+
+
+</html>

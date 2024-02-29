@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contakt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 50px;
+            background-color: #18191C;
+            color: #f694ff;
+            font-family: "Roboto", sans-serif;
+            background-image: url("images/img2.jpg");
+            background-size: cover;
+        }
+
+        form div {
+            margin-top: 1rem;
+        }
+
+        label,
+        input,
+        textarea,
+        button,
+        select {
+            font-size: 1.3rem;
+            line-height: 1.2
+        }
+
+        form {
+            width: 30em;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        label {
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        input,
+        textarea {
+            padding: 0.4rem;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 2rem;
+            background: #f694ff;
+            color: #fff;
+            border: none;
+            padding: 0.6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact-page">
+        <div id="menu">
+            <div id="menu-bar" onclick="menuOnClick()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href='users.html'>Услуги</a></li>
+                    <li><a href='list.html'>Список</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <form action="" method="POST">
+            <p>Имя</p> <input type="text" name="name" />
+            <p>Email</p> <input type="text" name="email" />
+            <p>Сообщение</p><textarea name="message" rows="6" cols="25"></textarea><br />
+            <input type="submit" value="Отправить" /><input type="reset" value="Очистить" />
+            <!-- <img src="images/img2.jpg" alt=""> -->
+        </form>
+    </div>
+    <script>
+        function menuOnClick() {
+            document.getElementById("menu-bar").classList.toggle("change");
+            document.getElementById("nav").classList.toggle("change");
+            document.getElementById("menu-bg").classList.toggle("change-bg");
+        }
+
+    </script>
+</body>
+
+</html>
